@@ -1,4 +1,3 @@
-//
 class Demigod {
     constructor(name, power) {
         this.name = name;
@@ -92,7 +91,12 @@ showGodMenuOptions(godInfo) {
     }
 
     viewGod() {
-        let index = prompt("Enter the index of the god you wish to view:");
+        let godString = "";
+        for (let i = 0; i < this.gods.length; i++) {
+            godString += i + ') ' + this.gods[i].name + '\n';
+        }
+        let index = prompt(`Enter the index of the god you wish to view:
+${godString}`);
         if (index > -1 && index < this.gods.length) { 
             this.selectedGod = this.gods[index]; 
             let description = 'God Name: ' + this.selectedGod.name + '\n';
